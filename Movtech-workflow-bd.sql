@@ -6,3 +6,10 @@ create table MvtCadEtapas (
 	seqOrdem int not null,
 	leadTime int not null
 );
+
+select * from MvtCadCliente;
+
+select * from MvtCadProduto;
+
+select * from MvtVendasEstruturaFaturamento where cidade = 'JARAGUA DO SUL';
+

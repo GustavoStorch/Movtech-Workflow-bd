@@ -7,9 +7,9 @@ create table MvtCadEtapas (
 	leadTime int not null
 );
 
-select * from MvtCadCliente;
+select * from MvtCadCliente where codCliente = 658;
 
-select * from MvtCadProduto;
+select * from MvtCadProduto where codProduto = '11054';
 
-select * from MvtVendasEstruturaFaturamento where cidade = 'JARAGUA DO SUL';
+select * from MvtVendasEstruturaFaturamento where codCliente = 658 and documento =169422;
 

@@ -17,9 +17,12 @@ create table MvtEtapasBaixas(
 	nomeFuncionario varchar(40) not null,
 	codEtapas int not null,
 	nomeEtapa varchar(50) not null,
+	corCelula varchar(20),
 	foreign key(codEmpresa) references MvtMenuEmpresa(codEmpresa),
 	foreign key(codEtapas) references MvtCadEtapas(codEtapas)
 );
+
+drop table MvtEtapasBaixas
 
 select * from MvtEtapasBaixas;
 
@@ -29,7 +32,7 @@ select * from MvtCadCliente where codCliente = 658;
 
 select * from MvtCadProduto where codProduto = '11054';
 
-select * from MvtVendasEstruturaFaturamento where codCliente = 658 and documento =169422;
+select * from MvtVendasEstruturaFaturamento where codCliente = 658 and documento =	169422;
 
 update MvtVendasEstruturaFaturamento set data = '2015-06-02' where documento = 169422 and codProduto= '11054';
 

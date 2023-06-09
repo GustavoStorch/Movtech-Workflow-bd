@@ -7,6 +7,8 @@ create table MvtCadEtapas (
 	leadTime int not null
 );
 
+
+
 create table MvtEtapasBaixas(
 	codEtapaBaixa int identity primary key,
 	codEmpresa int not null,
@@ -58,4 +60,12 @@ select codEmpresa, documento, qtde, valorFaturado, data, dataProjecao, codProdut
 select * from vwMvtVendasEstruturaFaturamento where codCliente = 658 and documento =169422;
 
 drop view vwMvtVendasEstruturaFaturamento
+
+
+select * from vwMvtCadCliente;
+
+select * from MvtVendasEstruturaFaturamento where codCliente = 12589 and documento = 235883;
+
+select * from vwMvtCadProduto where codProduto = '5100000000';
+
 

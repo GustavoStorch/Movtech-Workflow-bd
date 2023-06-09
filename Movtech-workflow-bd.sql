@@ -39,3 +39,20 @@ CREATE INDEX idxNomeCliente ON MvtCadCliente(nomeCliente);
 
 select * from MvtCadFuncionario;
 
+create view vwMvtCadCliente As 
+select codCliente, nomeCliente from MvtCadCliente;
+
+select * from vwMvtCadCliente where codCliente = 658;
+
+create view vwMvtCadProduto As 
+select codProduto, nomeProduto from MvtCadProduto;
+
+select * from vwMvtCadProduto where codProduto = '11054';
+
+create view vwMvtVendasEstruturaFaturamento As 
+select codEmpresa, documento, qtde, valorFaturado, data, dataProjecao, codProduto, codCliente from MvtVendasEstruturaFaturamento where codEmpresa = 1 and tipo = 'F';
+
+select * from vwMvtVendasEstruturaFaturamento where codCliente = 658 and documento =169422;
+
+drop view vwMvtVendasEstruturaFaturamento
+

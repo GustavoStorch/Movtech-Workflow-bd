@@ -7,8 +7,6 @@ create table MvtCadEtapas (
 	leadTime int not null
 );
 
-
-
 create table MvtEtapasBaixas(
 	codEtapaBaixa int identity primary key,
 	codEmpresa int not null,
@@ -45,7 +43,7 @@ CREATE INDEX idxNomeCliente ON MvtCadCliente(nomeCliente);
 select * from MvtCadFuncionario;
 
 create view vwMvtCadCliente As 
-select codCliente, nomeCliente from MvtCadCliente;
+select codCliente, nomeCliente, idxMvtCadClientCodCliente from MvtCadCliente;
 
 select * from vwMvtCadCliente where codCliente = 658;
 
@@ -55,7 +53,7 @@ select codProduto, nomeProduto from MvtCadProduto;
 select * from vwMvtCadProduto where codProduto = '11054';
 
 create view vwMvtVendasEstruturaFaturamento As 
-select codEmpresa, documento, qtde, valorFaturado, data, dataProjecao, codProduto, codCliente from MvtVendasEstruturaFaturamento where codEmpresa = 1 and tipo = 'F';
+select codEmpresa, documento, qtde, valorFaturado, data, dataProjecao, codProduto, codCliente, tipo from MvtVendasEstruturaFaturamento where codEmpresa = 1 and tipo = 'F';
 
 select * from vwMvtVendasEstruturaFaturamento where codCliente = 658 and documento =169422;
 
@@ -68,4 +66,16 @@ select * from MvtVendasEstruturaFaturamento where codCliente = 12589 and documen
 
 select * from vwMvtCadProduto where codProduto = '5100000000';
 
+CREATE INDEX idxMvtCadClientCodCliente
+ON MvtCadCliente (codCliente);
 
+CREATE INDEX idxMvtVendasEstruturaFaturamentoCodProduto
+ON MvtVendasEstruturaFaturamento (codProduto);
+
+CREATE INDEX idxMvtVendasEstruturaFaturamentoDocumento
+ON MvtVendasEstruturaFaturamento (documento);
+
+CREATE INDEX idxMvtVendasEstruturaFaturamentoDataEmissao
+ON MvtVendasEstruturaFaturamento (dataEmissao);
+
+select * from MvtVendasEstruturaFaturamento where dataEmissao BETWEEN '2020-01-13' AND '2020-01-13' AND tipo = 'f';

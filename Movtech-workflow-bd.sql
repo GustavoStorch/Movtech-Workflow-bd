@@ -78,4 +78,7 @@ ON MvtVendasEstruturaFaturamento (documento);
 CREATE INDEX idxMvtVendasEstruturaFaturamentoDataEmissao
 ON MvtVendasEstruturaFaturamento (dataEmissao);
 
-select * from MvtVendasEstruturaFaturamento where dataEmissao BETWEEN '2020-01-13' AND '2020-01-13' AND tipo = 'f';
+select * from MvtVendasEstruturaFaturamento where dataEmissao BETWEEN '2020-01-01' AND '2023-06-13' AND tipo = 'f';
+
+select * from MvtVendasEstruturaFaturamento where codCliente = 16215 and documento = 341225
+update MvtVendasEstruturaFaturamento set data = '2020-01-10' where documento = 341225 and codCliente = 16215;

@@ -82,3 +82,11 @@ select * from MvtVendasEstruturaFaturamento where dataEmissao BETWEEN '2020-01-0
 
 select * from MvtVendasEstruturaFaturamento where codCliente = 16215 and documento = 341225
 update MvtVendasEstruturaFaturamento set data = '2020-01-10' where documento = 341225 and codCliente = 16215;
+
+select sum(qtde) as quantidade, sum(valorFaturado) as Total, avg(valorFaturado/nullif(qtde,0)) as media, count(qtde) as totalproduto from MvtVendasEstruturaFaturamento where documento = 341111;
+
+select * from MvtVendasEstruturaFaturamento where documento = 341111;
+
+update MvtVendasEstruturaFaturamento set data = '2020-01-09' where documento = 341111;
+
+update MvtVendasEstruturaFaturamento set data = '2020-01-08' where documento = 340938;

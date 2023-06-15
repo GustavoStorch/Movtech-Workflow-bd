@@ -90,3 +90,7 @@ select * from MvtVendasEstruturaFaturamento where documento = 341111;
 update MvtVendasEstruturaFaturamento set data = '2020-01-09' where documento = 341111;
 
 update MvtVendasEstruturaFaturamento set data = '2020-01-08' where documento = 340938;
+
+select * from MvtAcessoUsuario;
+
+update MvtAcessoUsuario set senha = '123';

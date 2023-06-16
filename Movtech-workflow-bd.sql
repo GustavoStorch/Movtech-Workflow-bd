@@ -13,8 +13,7 @@ create table MvtEtapasBaixas(
 	nomeEmpresa varchar(100) not null,
 	documento varchar(200) not null,
 	dataBaixa Date not null,
-	codFuncionario int not null,
-	nomeFuncionario varchar(40) not null,
+	usuario varchar(40) not null,
 	codEtapas int not null,
 	nomeEtapa varchar(50) not null,
 	corCelula varchar(20),
@@ -87,7 +86,7 @@ select sum(qtde) as quantidade, sum(valorFaturado) as Total, avg(valorFaturado/n
 
 select * from MvtVendasEstruturaFaturamento where documento = 341111;
 
-update MvtVendasEstruturaFaturamento set data = '2020-01-09' where documento = 341111;
+update MvtVendasEstruturaFaturamento set data = '2020-01-09' where documento = 341110;
 
 update MvtVendasEstruturaFaturamento set data = '2020-01-08' where documento = 340938;
 

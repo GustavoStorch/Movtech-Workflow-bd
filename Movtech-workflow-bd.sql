@@ -86,10 +86,19 @@ select sum(qtde) as quantidade, sum(valorFaturado) as Total, avg(valorFaturado/n
 
 select * from MvtVendasEstruturaFaturamento where documento = 341111;
 
-update MvtVendasEstruturaFaturamento set data = '2020-01-09' where documento = 341110;
+update MvtVendasEstruturaFaturamento set data = '2020-01-08' where documento = 341096;
 
-update MvtVendasEstruturaFaturamento set data = '2020-01-08' where documento = 340938;
+update MvtVendasEstruturaFaturamento set data = '2020-01-21' where documento = 34051;
 
 select * from MvtAcessoUsuario;
+select * from MvtVendasEstruturaFaturamentoView where qtde = 0 AND tipo = 'F' AND codEmpresa = 1 and dataEmissao > '2020-01-01';
+
+select * from MvtVendasEstruturaFaturamento where documento = 341096;
+SELECT data FROM MvtVendasEstruturaFaturamento WHERE documento = 341096;
+
+CREATE VIEW MvtVendasEstruturaFaturamentoView AS
+SELECT documento, qtde, valorFaturado, dataProjecao, codEmpresa, dataEmissao, codCliente, codProduto, 
+tipo, data FROM MvtVendasEstruturaFaturamento where tipo = 'F' AND codEmpresa = 1;
+
 
 update MvtAcessoUsuario set senha = '123';

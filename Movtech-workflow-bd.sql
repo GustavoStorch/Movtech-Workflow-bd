@@ -21,6 +21,12 @@ create table MvtEtapasBaixas(
 	foreign key(codEtapas) references MvtCadEtapas(codEtapas)
 );
 
+create table deleteme(
+	id int identity primary key
+);
+
+select * from deleteme
+
 drop table MvtEtapasBaixas
 
 select * from MvtEtapasBaixas;
@@ -86,7 +92,7 @@ select sum(qtde) as quantidade, sum(valorFaturado) as Total, avg(valorFaturado/n
 
 select * from MvtVendasEstruturaFaturamento where documento = 341111;
 
-update MvtVendasEstruturaFaturamento set data = '2020-01-08' where documento = 341096;
+update MvtVendasEstruturaFaturamento set data = '2020-01-10' where documento = 341226;
 
 update MvtVendasEstruturaFaturamento set data = '2020-01-21' where documento = 34051;
 
